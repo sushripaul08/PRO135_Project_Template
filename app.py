@@ -30,7 +30,7 @@ def predict():
 
 
 # Creating an API to save the review, user clicks on the Save button
-@app.route('/' , methods = [''])
+@app.route('/save-entry' , methods = ['POST'])
 def save():
 
     # extracting date , product name , review , sentiment associated from the JSOn data
@@ -43,8 +43,10 @@ def save():
     data_entry = date + "," + product + "," + review + "," + sentiment
 
     # open the file in the 'append' mode
+    save = data_entry.append()
 
     # Log the data in the file
+    
 
     # return a success message
     return jsonify({'status' : 'success' , 
